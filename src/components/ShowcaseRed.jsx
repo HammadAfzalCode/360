@@ -76,7 +76,17 @@ export default function ShowcaseRed() {
                   Our Projects
                 </Typography>
             </Grid>
+            <Grid sx={{display: "grid", gap:'10px', justifyContent:"space-between", gridTemplateColumns:"1fr 1fr 1fr"}}>
+
+
  <ShowcaseNewcard />
+ <ShowcaseNewcard />
+ <ShowcaseNewcard />
+ 
+ <ShowcaseNewcard />
+ <ShowcaseNewcard />
+ <ShowcaseNewcard />
+            </Grid>
           </Box>
         </Container>
       </Box>
