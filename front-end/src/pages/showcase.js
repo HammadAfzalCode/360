@@ -9,7 +9,7 @@ const Showcase = () => {
       <Navbar />
       {/* <ShowcaseNew /> */}
       <ShowcaseRed />
-      {/* <ShowcaseComponent /> */}
+      
     </div>
   );
 };

@@ -76,17 +76,6 @@ export default function Showcase() {
                   Our Projects
                 </Typography>
 
-                {/* <Typography
-                  sx={{
-                    color: "red",
-                    lineHeight: "1.5",
-                    display: "flex",
-                    gap: "20px",
-                    fontSize: { xs: "40px", md: "60px" },
-                  }}
-                >
-                  & Collaborations
-                </Typography> */}
               </Grid>
 
 {/* main hero div  */}
@@ -113,11 +102,7 @@ export default function Showcase() {
                   />
                 </Link>
               </Grid>
-              {/* <Grid container spacing={2}>
-              </Grid>
-
-              <Grid container spacing={2}>
-              </Grid> */}
+             
 
               <Box
                 sx={{
@@ -138,37 +123,7 @@ export default function Showcase() {
                     }}
                   >
                     <Link href="./project-details">
-                      {/* <Typography
-                        variant="h1"
-                        sx={{
-                          width: {
-                            lg: "600",
-                            md: "600",
-                            sm: "400",
-                            xs: "300",
-                          },
-                          color: "#faf9f6a9",
-                          textShadow: "4px 4px 4px black",
-                          border: "2px solid black",
-                          position: "absolute",
-                          display: "flex",
-                          top: "60%",
-                          left: "50%",
-                          transform: "translate(-50%, -50%)",
-                          textAlign: "center",
-                          cursor: "pointer",
-                          fontFamily: "cursive",
-                          fontSize: {
-                            xs: "14px",
-                            sm: "22px",
-                            md: "31px",
-                            lg: "46px",
-                          },
-                          zIndex: '1'
-                        }}
-                      >
-                        Innovative Project 1
-                      </Typography> */}
+                     
                     </Link>
                     <Link href="./project-details">
                       <img

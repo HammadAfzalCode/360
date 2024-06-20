@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "showcase_datas",
+  "info": {
+    "singularName": "showcase-data",
+    "pluralName": "showcase-datas",
+    "displayName": "ShowcaseData",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "CardTitle": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "shortDescription": {
+      "type": "string",
+      "required": true
+    },
+    "cardImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

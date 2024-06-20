@@ -76,7 +76,7 @@ export default function BasicGrid() {
       <Grid container spacing={1}>
         <Grid xs={12} sm={12} md={6} lg={6} xl={4}>
           {/* <Item> */}
-          <MultiActionAreaCardDark
+          <ShowcaseNew
             path="/project2.webp"
             heading="BetMakers - the next generation online batting platform"
             description="Creation of a next generation multi-tenant Horse Racing betting system
