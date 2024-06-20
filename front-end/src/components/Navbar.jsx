@@ -26,13 +26,13 @@ import { useTheme } from "@mui/system";
 import Image from "next/image";
 import CustomButton from "./CustomButton";
 
-
 const drawerWidth = 240;
 const navItems = [
   "About",
   "Case Studies",
   "Pricing",
-  "Engineering"
+  "Engineering",
+  "Showcase",
 ];
 
 function Navbar(props) {
@@ -50,8 +50,9 @@ function Navbar(props) {
     if (item === "Engineering") {
       router.push("/engineering");
     }
-   
-    
+    if (item === "Showcase") {
+      router.push("/showcase");
+    }
   };
   const handleLogoClick = () => {
     // Use router.push to navigate programmatically
@@ -86,9 +87,12 @@ function Navbar(props) {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }} onClick={() => handleMenuItemClick(item)}>
+            <ListItemButton
+              sx={{ textAlign: "center" }}
+              onClick={() => handleMenuItemClick(item)}
+            >
               <ListItemText primary={item} />
-            </ListItemButton >
+            </ListItemButton>
           </ListItem>
         ))}
       </List>
@@ -116,7 +120,6 @@ function Navbar(props) {
               justifyContent: "space-between",
             }}
           >
-
             <Image
               onClick={handleLogoClick}
               src="/assets/Vector.png"
@@ -124,7 +127,6 @@ function Navbar(props) {
               width={isXSmallScreen ? 150 : 233}
               height={isXSmallScreen ? 50 : 70}
               // layout="responsive"
-
             />
             <Box
               sx={{
@@ -136,64 +138,93 @@ function Navbar(props) {
               {isMediumScreen
                 ? null
                 : // Render navigation links for screens larger than 600px
-                navItems.map((item, index) => (
-                  index === 2 ? (
-                    <MenuItem
-                      onClick={() => handleMenuItemClick(item)}
-                      key={item}
-                      sx={{
-                        fontSize: isTabScreen ? "14px" : "16px",
-                        paddingX: ".5rem",
-                        textTransform: "none",
-                        color: "#fff",
-                        cursor: item === "Pricing" ? "pointer" : "default", // Set cursor style for clickable item
-                      }}
-                    >
-                      {item}
-                    </MenuItem>
-
-
-                  ) : index === 1 ? (<MenuItem
-                    onClick={() => handleMenuItemClick(item)}
-                    key={item}
-                    sx={{
-                      fontSize: isTabScreen ? "14px" : "16px",
-                      paddingX: ".5rem",
-                      textTransform: "none",
-                      color: "#fff",
-                      cursor: item === "Case Studies" ? "pointer" : "default", // Set cursor style for clickable item
-                    }}
-                  >
-                    {item}
-                  </MenuItem>) : index === 0 ? (<MenuItem
-                    onClick={() => handleMenuItemClick(item)}
-                    key={item}
-                    sx={{
-                      fontSize: isTabScreen ? "14px" : "16px",
-                      paddingX: ".5rem",
-                      textTransform: "none",
-                      color: "#fff",
-                      cursor: item === "About" ? "pointer" : "default", // Set cursor style for clickable item
-                    }}
-                  >
-                    {item}
-                  </MenuItem>) : index === 3 ? (<MenuItem
-                    onClick={() => handleMenuItemClick(item)}
-                    key={item}
-                    sx={{
-                      fontSize: isTabScreen ? "14px" : "16px",
-                      paddingX: ".5rem",
-                      textTransform: "none",
-                      color: "#fff",
-                      cursor: item === "Engineering" ? "pointer" : "default", // Set cursor style for clickable item
-                    }}
-                  >
-                    {item}
-                  </MenuItem>) : (
-                    <MenuItem key={item} sx={{ fontSize: isTabScreen ? '14px' : '16px', paddingX: '.5rem', textTransform: 'none', color: '#fff' }}>
-                      {item}
-                    </MenuItem>
-                  )))}
+                  navItems.map((item, index) =>
+                    index === 2 ? (
+                      <MenuItem
+                        onClick={() => handleMenuItemClick(item)}
+                        key={item}
+                        sx={{
+                          fontSize: isTabScreen ? "14px" : "16px",
+                          paddingX: ".5rem",
+                          textTransform: "none",
+                          color: "#fff",
+                          cursor: item === "Pricing" ? "pointer" : "default", // Set cursor style for clickable item
+                        }}
+                      >
+                        {item}
+                      </MenuItem>
+                    ) : index === 1 ? (
+                      <MenuItem
+                        onClick={() => handleMenuItemClick(item)}
+                        key={item}
+                        sx={{
+                          fontSize: isTabScreen ? "14px" : "16px",
+                          paddingX: ".5rem",
+                          textTransform: "none",
+                          color: "#fff",
+                          cursor:
+                            item === "Case Studies" ? "pointer" : "default", // Set cursor style for clickable item
+                        }}
+                      >
+                        {item}
+                      </MenuItem>
+                    ) : index === 0 ? (
+                      <MenuItem
+                        onClick={() => handleMenuItemClick(item)}
+                        key={item}
+                        sx={{
+                          fontSize: isTabScreen ? "14px" : "16px",
+                          paddingX: ".5rem",
+                          textTransform: "none",
+                          color: "#fff",
+                          cursor: item === "About" ? "pointer" : "default", // Set cursor style for clickable item
+                        }}
+                      >
+                        {item}
+                      </MenuItem>
+                    ) : index === 3 ? (
+                      <MenuItem
+                        onClick={() => handleMenuItemClick(item)}
+                        key={item}
+                        sx={{
+                          fontSize: isTabScreen ? "14px" : "16px",
+                          paddingX: ".5rem",
+                          textTransform: "none",
+                          color: "#fff",
+                          cursor:
+                            item === "Engineering" ? "pointer" : "default", // Set cursor style for clickable item
+                        }}
+                      >
+                        {item}
+                      </MenuItem>
+                    ) : index === 4 ? (
+                      <MenuItem
+                        onClick={() => handleMenuItemClick(item)}
+                        key={item}
+                        sx={{
+                          fontSize: isTabScreen ? "14px" : "16px",
+                          paddingX: ".5rem",
+                          textTransform: "none",
+                          color: "#fff",
+                          cursor: item === "Showcase" ? "pointer" : "default", // Set cursor style for clickable item
+                        }}
+                      >
+                        {item}
+                      </MenuItem>
+                    ) : (
+                      <MenuItem
+                        key={item}
+                        sx={{
+                          fontSize: isTabScreen ? "14px" : "16px",
+                          paddingX: ".5rem",
+                          textTransform: "none",
+                          color: "#fff",
+                        }}
+                      >
+                        {item}
+                      </MenuItem>
+                    )
+                  )}
               {/* <Button
                 variant="contained"
                 sx={{

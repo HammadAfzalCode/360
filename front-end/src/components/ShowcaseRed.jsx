@@ -60,32 +60,36 @@ export default function ShowcaseRed() {
         <Navbar />
         <Container>
           <Box>
-          <Grid
+            <Grid
               container
               spacing={2}
               sx={{ paddingTop: "10%", marginTop: "50px" }}
             >
-
-<Typography
-                  sx={{
-                    color: "#fff",
-                    fontFamily: "Clash Display",
-                    fontSize: { xs: "40px", md: "60px" },
-                  }}
-                >
-                  Our Projects
-                </Typography>
+              <Typography
+                sx={{
+                  color: "#fff",
+                  fontFamily: "Clash Display",
+                  fontSize: { xs: "40px", md: "60px" },
+                }}
+              >
+                Our Projects
+              </Typography>
             </Grid>
-            <Grid sx={{display: "grid", gap:'10px', justifyContent:"space-between", gridTemplateColumns:"1fr 1fr 1fr"}}>
+            <Grid
+              sx={{
+                display: "grid",
+                gap: "10px",
+                justifyContent: "space-between",
+                gridTemplateColumns: "1fr 1fr 1fr",
+              }}
+            >
+              <ShowcaseNewcard />
+              <ShowcaseNewcard />
+              <ShowcaseNewcard />
 
-
- <ShowcaseNewcard />
- <ShowcaseNewcard />
- <ShowcaseNewcard />
- 
- <ShowcaseNewcard />
- <ShowcaseNewcard />
- <ShowcaseNewcard />
+              <ShowcaseNewcard />
+              <ShowcaseNewcard />
+              <ShowcaseNewcard />
             </Grid>
           </Box>
         </Container>
