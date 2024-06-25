@@ -9,10 +9,10 @@ import Link from "next/link";
 
 export default function ShowcaseCard({ title, description, img }) {
   return (
-    <Link style={{ textDecoration: "none" }} href="/project-detail" passHref>
+    // <Link style={{ textDecoration: "none" }} href="/project-detail" passHref>
       <Card
         sx={{
-          maxWidth: "25vw",
+    maxWidth: {xs:"90vw",sm:"45vw"},
           backgroundColor: "#181815",
         }}
       >
@@ -75,6 +75,7 @@ export default function ShowcaseCard({ title, description, img }) {
             image={img}
             alt="Fintech"
             sx={{
+              // height:"10rem",
               transform: "translateY(30%)",
               transition: "transform 0.3s ease",
               "&:hover": {
@@ -84,6 +85,6 @@ export default function ShowcaseCard({ title, description, img }) {
           />
         </CardActionArea>
       </Card>
-    </Link>
+    // </Link>
   );
 }

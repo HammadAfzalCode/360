@@ -376,7 +376,11 @@ export interface ApiShowcaseDataShowcaseData extends Schema.CollectionType {
   attributes: {
     CardTitle: Attribute.String & Attribute.Required & Attribute.Unique;
     shortDescription: Attribute.String & Attribute.Required;
-    cardImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    cardImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    detailPageImg: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

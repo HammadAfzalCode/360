@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import Container from "../components/Container";
 import Work from "../components/Work";
 import Head from "next/head";
-import slugify from 'slugify'
+import slugify from "slugify";
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 const Blog = ({ blogs }) => {
@@ -24,7 +24,10 @@ const Blog = ({ blogs }) => {
           content="Explore 360XpertSolutions' Engineering for insightful articles, tips, and industry updates."
         />
         <meta name="author" content="360XpertSolutions" />
-        <link rel="canonical" href="https://360xpertsolutions.com/engineering" />
+        <link
+          rel="canonical"
+          href="https://360xpertsolutions.com/engineering"
+        />
         <meta property="og:title" content="360XpertSolutions Engineering" />
         <meta
           property="og:description"
@@ -82,33 +85,40 @@ const Blog = ({ blogs }) => {
               {blogs &&
                 blogs.map((blog) => (
                   <Grid item key={blog.id} xs={12} md={6}>
-    <Link href={`/engineering/${blog.id}/${slugify(blog.attributes.title, { lower: true, strict: true })}`} passHref>
+                    <Link
+                      href={`/engineering/${blog.id}/${slugify(
+                        blog.attributes.title,
+                        { lower: true, strict: true }
+                      )}`}
+                      passHref
+                    >
                       <Box sx={{ cursor: "pointer", position: "relative" }}>
-                      {blog.attributes.content &&
-  blog.attributes.content.some(
-    (contentItem) => contentItem.type === "image"
-  ) && (
-    <div>
-      {blog.attributes.content
-        .filter((contentItem) => contentItem.type === "image")
-        .slice(0, 1)
-        .map((contentItem, index) => (
-          <CardMedia
-            key={index}
-            component="img"
-            image={contentItem.image.url}
-            alt={contentItem.image.alternativeText}
-            sx={{
-              height: 200, // Fixed height for all images
-              width: '100%', // Take up all available width
-              objectFit: 'cover', // Cover the area, possibly cropping the image
-              paddingTop: '10px', // Optional padding, adjust as needed
-            }}
-          />
-        ))}
-    </div>
-  )
- && (
+                        {blog.attributes.content &&
+                          blog.attributes.content.some(
+                            (contentItem) => contentItem.type === "image"
+                          ) && (
+                            <div>
+                              {blog.attributes.content
+                                .filter(
+                                  (contentItem) => contentItem.type === "image"
+                                )
+                                .slice(0, 1)
+                                .map((contentItem, index) => (
+                                  <CardMedia
+                                    key={index}
+                                    component="img"
+                                    image={contentItem.image.url}
+                                    alt={contentItem.image.alternativeText}
+                                    sx={{
+                                      height: 200, // Fixed height for all images
+                                      width: "100%", // Take up all available width
+                                      objectFit: "cover", // Cover the area, possibly cropping the image
+                                      paddingTop: "10px", // Optional padding, adjust as needed
+                                    }}
+                                  />
+                                ))}
+                            </div>
+                          ) && (
                             <div>
                               {blog.attributes.content
                                 .filter(
